@@ -1,0 +1,4 @@
+# EVERYTIME you modify a model
+# you need to run migrations
+python3 manage.py makemigrations
+python3 manage.py migrate

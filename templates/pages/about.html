@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}About | Capstone Project{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary mb-3">About Capstone Project</h1>
+        <p class="lead text-muted">A capstone project showcasing full-stack web development skills</p>
+    </div>
+
+    <!-- Main Description Card -->
+    <div class="card shadow-lg border-0 mb-5">
+        <div class="card-body p-5">
+            <p class="fs-5 text-center">
+                Welcome to My <strong class="text-primary">Capstone Project</strong>, a full-stack web development capstone course project. 
+                This project demonstrates skills in Django, HTML, CSS, JavaScript, and Bootstrap by creating a functional, 
+                responsive web application with user-friendly features.
+            </p>
+        </div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="row g-4 mb-5">
+        <!-- Project Purpose -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-bullseye fa-2x text-primary me-3"></i>
+                        <h3 class="mb-0">Project Purpose</h3>
+                    </div>
+                    <p class="text-muted">
+                        The purpose of this Capstone Project is to simulate an online shopping experience, complete with a homepage, 
+                        product sections, mini-games, and an interactive UI. This project helps showcase practical full-stack 
+                        development skills in a real-world scenario.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Enhancements -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-rocket fa-2x text-primary me-3"></i>
+                        <h3 class="mb-0">Future Enhancements</h3>
+                    </div>
+                    <p class="text-muted">
+                        Future iterations could include user accounts, shopping carts, payment simulation, 
+                        more mini-games, and advanced product filtering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technologies Section -->
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center py-3">
+            <h3 class="mb-0"><i class="fas fa-code me-2"></i>Technologies Used</h3>
+        </div>
+        <div class="card-body p-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fab fa-python fa-3x text-success mb-3"></i>
+                        <h5>Django 6.0</h5>
+                        <p class="text-muted small">Python framework for backend</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fab fa-html5 fa-3x text-danger mb-3"></i>
+                        <h5>HTML5 & CSS3</h5>
+                        <p class="text-muted small">Structure and styling</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fab fa-bootstrap fa-3x text-primary mb-3"></i>
+                        <h5>Bootstrap 5</h5>
+                        <p class="text-muted small">Responsive design</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-font-awesome fa-3x text-info mb-3"></i>
+                        <h5>Font Awesome</h5>
+                        <p class="text-muted small">Icon library</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fab fa-js fa-3x text-warning mb-3"></i>
+                        <h5>JavaScript</h5>
+                        <p class="text-muted small">Interactive elements</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-database fa-3x text-secondary mb-3"></i>
+                        <h5>Database</h5>
+                        <p class="text-muted small">Data management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

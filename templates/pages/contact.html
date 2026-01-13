@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Capstone Project{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Get In Touch</h2>
+        <p class="text-center text-white mb-5" style="font-size: 1.2rem;">Have questions? We'd love to hear from you!</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">
+                            <i class="fas fa-user me-2"></i>Your Name
+                        </label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope me-2"></i>Email Address
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">
+                            <i class="fas fa-comment-dots me-2"></i>Your Message
+                        </label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

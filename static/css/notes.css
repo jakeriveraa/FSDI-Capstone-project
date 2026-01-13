@@ -1,0 +1,300 @@
+/* ============================================
+   NOTES PAGE STYLING
+   Matches Capstone Project Design System
+   ============================================ */
+
+/* Notes Container */
+.notes-list {
+    padding: 2rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* Page Title */
+.notes-list h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Notes Grid Container */
+.notes-list .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Individual Note Card */
+.notes-list .note {
+    background: white;
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.notes-list .note:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Note Image */
+.notes-list .note img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.95);
+}
+
+.notes-list .note:hover img {
+    transform: scale(1.08);
+    filter: brightness(1);
+}
+
+/* Note Content Area */
+.notes-list .note > div,
+.notes-list .note {
+    text-align: left;
+}
+
+/* Note Title */
+.notes-list .note h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 1.5rem 1.5rem 1rem 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.notes-list .note:hover h3 {
+    color: #667eea;
+}
+
+/* Note Content Text */
+.notes-list .note p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1;
+}
+
+/* Note Labels (Created At & Category) */
+.notes-list .note label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin: 0.5rem 1.5rem;
+    font-weight: 500;
+}
+
+.notes-list .note label:last-child {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-image-slice: 1;
+    border-width: 0 0 3px 0;
+}
+
+/* Category Label Styling */
+.notes-list .note label:last-child {
+    color: #667eea;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+/* Empty State - No Notes */
+.notes-list .list:empty::before {
+    content: 'No notes found. Create your first note!';
+    display: block;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #a0aec0;
+    padding: 4rem 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Add Note Button (if you have one) */
+.btn-add-note {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    z-index: 999;
+}
+
+.btn-add-note:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+}
+
+/* Note Card without Image */
+.notes-list .note:not(:has(img)) h3 {
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .notes-list h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .notes-list .list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .notes-list .note img {
+        height: 220px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .notes-list {
+        padding: 1.5rem 0;
+    }
+    
+    .notes-list h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .notes-list .list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .notes-list .note {
+        max-width: 100%;
+    }
+    
+    .notes-list .note img {
+        height: 200px;
+    }
+    
+    .notes-list .note h3 {
+        font-size: 1.35rem;
+        margin: 1.25rem 1.25rem 0.75rem 1.25rem;
+    }
+    
+    .notes-list .note p {
+        font-size: 0.95rem;
+        margin: 0 1.25rem 1.25rem 1.25rem;
+    }
+    
+    .notes-list .note label {
+        margin: 0.4rem 1.25rem;
+        font-size: 0.8rem;
+    }
+    
+    .notes-list .note label:last-child {
+        margin-bottom: 1.25rem;
+    }
+    
+    .btn-add-note {
+        width: 55px;
+        height: 55px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.75rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .notes-list h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .notes-list .list {
+        gap: 1.25rem;
+        padding: 0 0.75rem;
+    }
+    
+    .notes-list .note img {
+        height: 180px;
+    }
+    
+    .notes-list .note h3 {
+        font-size: 1.25rem;
+        margin: 1rem 1rem 0.5rem 1rem;
+    }
+    
+    .notes-list .note p {
+        font-size: 0.9rem;
+        margin: 0 1rem 1rem 1rem;
+    }
+    
+    .notes-list .note label {
+        margin: 0.35rem 1rem;
+        font-size: 0.75rem;
+    }
+    
+    .notes-list .note label:last-child {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Animation on load */
+.notes-list .note {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.notes-list .note:nth-child(1) { animation-delay: 0.1s; }
+.notes-list .note:nth-child(2) { animation-delay: 0.2s; }
+.notes-list .note:nth-child(3) { animation-delay: 0.3s; }
+.notes-list .note:nth-child(4) { animation-delay: 0.4s; }
+.notes-list .note:nth-child(5) { animation-delay: 0.5s; }
+.notes-list .note:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
