@@ -6,9 +6,9 @@
 {% endblock %}
 {% block content %}
 <div class="notes-list">
-    
+    <a class="note-create" href="{% url 'notes_create' %}">Create New Note</a>    
     <h1>Notes List</h1>
-    
+
     <div class="list">
         {% for record in note_list %}
         <div class="note">
@@ -21,6 +21,12 @@
 
             <label>created on: {{ record.created_at }}</label>
             <label>Category: {{ record.category }}</label>
+
+            <a 
+                class="btn btn-outline-primary details-link"
+                href="{%url 'notes_detail' record.id %}">
+                view details
+            </a>
         </div>
         {% endfor %}
     </div>

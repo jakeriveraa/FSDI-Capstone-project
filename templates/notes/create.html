@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Note{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/notes.css' %}">
+{% endblock %}
+{% block content %}
+
+<section class="note-create-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Create New Note</h2>
+        <p class="text-center text-dark mb-5" style="font-size: 1.2rem;">Share your thoughts and ideas with your personalized notes!</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-check me-2"></i>Create Note
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -18,18 +18,20 @@
 
 /* Form Container */
 .contact-section .col-md-8 {
-    background: white;
+    background: var(--card-bg);
     padding: 50px;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Form Labels */
 .form-label {
     font-weight: 600;
-    color: #333;
+    color: var(--text-gray);
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    transition: color 0.4s ease;
 }
 
 /* Form Inputs */
@@ -39,12 +41,21 @@
     padding: 12px 20px;
     font-size: 1rem;
     transition: all 0.3s ease;
+    background-color: var(--input-bg);
+    color: var(--text);
+}
+
+.form-control::placeholder {
+    color: var(--text-gray);
+    opacity: 0.7;
 }
 
 .form-control:focus {
     border-color: #667eea;
     box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
     outline: none;
+    background-color: var(--input-bg);
+    color: var(--text);
 }
 
 .form-control:hover {
@@ -69,6 +80,8 @@ textarea.form-control {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    color: white;
+    cursor: pointer;
 }
 
 .btn-primary:hover {

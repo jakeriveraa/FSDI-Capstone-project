@@ -1,0 +1,337 @@
+/* Simple Theme Variables */
+[data-theme="light"],
+[data-theme=""] {
+    --bg: #f7fafc;
+    --text: #1a202c;
+    --text-gray: #718096;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #e0e0e0;
+    --border: #e2e8f0;
+    --primary-dark: #2d3748;
+    --primary-smoke: #4a5568;
+}
+
+[data-theme="dark"] {
+    --bg: #1a202c;
+    --text: #f7fafc;
+    --text-gray: #cbd5e0;
+    --card-bg: #374151;
+    --input-bg: #2d3748;
+    --input-border: #4a5568;
+    --border: #4a5568;
+    --primary-dark: #f7fafc;
+    --primary-smoke: #cbd5e0;
+}
+
+[data-theme="dark"] .login-container {
+  background: linear-gradient(
+    135deg,
+    #1a3a52 0%,
+    #2d1b3d 100%
+  );
+}
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"],
+[data-theme=""] {
+    /* Body */
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+[data-theme="light"] body,
+[data-theme=""] body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* ===== DARK MODE - COMPREHENSIVE OVERRIDE ===== */
+[data-theme="dark"] {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* All Headings in Dark Mode */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--primary-dark) !important;
+}
+
+/* All Text Elements in Dark Mode */
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] li,
+[data-theme="dark"] a,
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .card-text,
+[data-theme="dark"] .lead {
+    color: var(--text-gray) !important;
+}
+
+/* Form Labels in Dark Mode */
+[data-theme="dark"] label,
+[data-theme="dark"] .form-label {
+    color: var(--text) !important;
+}
+
+/* Cards in Dark Mode */
+[data-theme="dark"] .card,
+[data-theme="dark"] .hover-card,
+[data-theme="dark"] .contact-section .col-md-8,
+[data-theme="dark"] .note-create-section .col-md-8,
+[data-theme="dark"] .login-card {
+    background-color: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .card-body {
+    background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .card-title {
+    color: var(--primary-dark) !important;
+}
+
+[data-theme="dark"] .card-text {
+    color: var(--text-gray) !important;
+}
+
+/* Form Controls in Dark Mode */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="password"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] input[type="file"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--input-border) !important;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+}
+
+/* Login Card in Dark Mode */
+[data-theme="dark"] .login-card {
+    background-color: var(--card-bg) !important;
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] .login-card h2 {
+    color: var(--primary-dark) !important;
+}
+
+[data-theme="dark"] .login-card label {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .login-card input[type="text"],
+[data-theme="dark"] .login-card input[type="password"],
+[data-theme="dark"] .login-card input[type="email"] {
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--input-border) !important;
+}
+
+[data-theme="dark"] .login-card input:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* Navbar in Dark Mode */
+[data-theme="dark"] .navbar {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .navbar-brand {
+    color: var(--primary-dark) !important;
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .nav-link:hover {
+    color: var(--primary-dark) !important;
+}
+
+/* Footer in Dark Mode */
+[data-theme="dark"] .footer {
+    background: linear-gradient(135deg, #0f1419 0%, #1a202c 100%) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .footer h6 {
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] .footer a {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .footer .text-muted {
+    color: var(--text-gray) !important;
+}
+
+/* Note Cards in Dark Mode */
+[data-theme="dark"] .note {
+    background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .note h3 {
+    color: var(--primary-dark) !important;
+}
+
+[data-theme="dark"] .note p {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .note label {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .note-detail {
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] .note-detail label {
+    background-color: var(--card-bg) !important;
+    color: var(--text-gray) !important;
+    border-color: var(--border) !important;
+}
+
+/* Alert Messages in Dark Mode */
+[data-theme="dark"] .alert {
+    background-color: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+/* Badge in Dark Mode */
+[data-theme="dark"] .badge {
+    color: var(--text) !important;
+}
+
+/* All Text Color Classes */
+[data-theme="dark"] .text-dark {
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .text-primary {
+    color: #667eea !important;
+}
+
+/* Contact Section in Dark Mode */
+[data-theme="dark"] .contact-section .col-md-8 {
+    background-color: var(--card-bg) !important;
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] .form-label {
+    color: var(--text-gray) !important;
+}
+
+[data-theme="dark"] .form-control {
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--input-border) !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: var(--text-gray) !important;
+    opacity: 0.7 !important;
+}
+
+[data-theme="dark"] .form-control:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+}
+
+[data-theme="dark"] .form-control:hover {
+    border-color: #667eea !important;
+}
+
+[data-theme="dark"] .note-create-section {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+/* Smooth transitions */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.card, .hover-card, .contact-section .col-md-8, .note-create-section .col-md-8, .login-card,
+.form-control, input, textarea, select, .navbar, .footer, p, h1, h2, h3, h4, h5, h6, label {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.nav-theme-toggle {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.theme-toggle-rotate {
+    animation: rotate 0.3s ease;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .theme-toggle-btn {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
+    }
+}

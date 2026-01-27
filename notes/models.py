@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
@@ -20,3 +21,10 @@ class Note(models.Model):
     # stock = models.IntegerField(default=0)
     def __str__(self):
         return self.title
+    
+
+class Comment(models.Model):
+    note = models.ForeignKey(Note, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
