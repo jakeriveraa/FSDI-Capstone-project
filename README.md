@@ -24,4 +24,5 @@ How to Run
 
 7. Open your web browser and go to:
    http://127.0.0.1:8000/
->>>>>>> 0955d91 (Add all recent changes to project)
+
+
