@@ -1,0 +1,65 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Profile Update
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile_update.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Update Your Profile</h2>
+                    
+                    {% if object.picture %}
+                    <div class="text-center mb-4">
+                        <img src="{{ object.picture.url }}" alt="Profile Picture" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    {% else %}
+                    <div class="text-center mb-4">
+                        <img src="{% static 'img/placeholder.png' %}" alt="No Picture" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    </div>
+                    {% endif %}
+                    
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Profile Picture</label>
+                            {{ form.picture }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            {{ form.phone_number }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Zip Code</label>
+                            {{ form.zip_code }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Bio</label>
+                            {{ form.bio }}
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Update Profile</button>
+                            <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -21,6 +21,21 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'contact' %}">Contact</a>
         </li>
+        
+        <!-- CART ICON -->
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view_cart' %}">
+            <i class="fas fa-shopping-cart"></i> Cart
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="{% url 'profile_details' %}">Profile</a>
+
+        </li>
+       
+        {% endif %}
+        
       </ul>
       <div class="d-flex align-items-center gap-2 ms-3">
         <button id="theme-toggle" class="nav-theme-toggle" aria-label="Toggle theme">

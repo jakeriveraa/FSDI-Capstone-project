@@ -50,9 +50,24 @@
               <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
 
               {% if product.is_in_stock %}
-              <span class="badge-stock in-stock">In Stock: {{ product.stock }}</span>
+                <span class="badge-stock in-stock">In Stock: {{ product.stock }}</span>
               {% else %}
-              <span class="badge-stock out-of-stock">Out of Stock</span>
+                <span class="badge-stock out-of-stock">Out of Stock</span>
+              {% endif %}
+            </div>
+
+            <div class="mt-3">
+              {% if user.is_authenticated %}
+                <form method="post" action="{% url 'add_to_cart' product.id %}" style="display:inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-success btn-sm w-100" onclick="showCartModal(event)">
+                    Add to Cart
+                  </button>
+                </form>
+              {% else %}
+                <a href="{% url 'login' %}" class="btn btn-info btn-sm w-100">
+                  Login to Add to Cart
+                </a>
               {% endif %}
             </div>
 
@@ -77,4 +92,45 @@
 
   </div>
 </section>
+
+<!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="cartModalLabel">✅ Added to Cart!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="fs-5 mb-4">Item has been successfully added to your cart.</p>
+        <div class="d-flex gap-2 justify-content-center">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+          <a href="{% url 'view_cart' %}" class="btn btn-primary">View Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showCartModal(event) {
+    event.preventDefault();
+    
+    const form = event.target.closest('form');
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        const modal = new bootstrap.Modal(document.getElementById('cartModal'));
+        modal.show();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+</script>
+
 {% endblock %}

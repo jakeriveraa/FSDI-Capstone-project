@@ -43,7 +43,15 @@ class NoteDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # read and the comments related to the note
         note = self.object
-        comments = Comment.objects.filter(note=note).order_by("-created_at")
+        comments = Comment.objects.filter(note=note).select_related('author').order_by("-created_at")
+        
+        # Debug print
+        for comment in comments:
+            print(f"Author: {comment.author.username}")
+            print(f"Has profile: {hasattr(comment.author, 'profile')}")
+            if hasattr(comment.author, 'profile'):
+                print(f"Has picture: {comment.author.profile.picture}")
+        
         context['comments'] = comments
         return context
 

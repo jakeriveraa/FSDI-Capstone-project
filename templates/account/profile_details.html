@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile_update.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    
+                    <h1>{{ profile.user.username }}'s Profile</h1>
+                    
+                    {% if profile.picture %}
+                        <img src="{{ profile.picture.url }}" alt="Profile Picture" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                    {% else %}
+                        <img src="{% static 'img/placeholderr.webp' %}" alt="No Picture" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                    {% endif %}
+
+                    <ul class="list-unstyled mt-4">
+                        {% if profile.phone_number %}
+                        <li><strong>Phone:</strong> {{ profile.phone_number }}</li>
+                        {% endif %}
+                        {% if profile.zip_code %}
+                        <li><strong>Zip Code:</strong> {{ profile.zip_code }}</li>
+                        {% endif %}
+                        {% if profile.bio %}
+                        <li><strong>Bio:</strong> {{ profile.bio }}</li>
+                        {% endif %}
+                    </ul>
+                    
+                    <div class="mt-4">
+                        {% if profile.user == request.user %}
+                            <a href="{% url 'profile_update' %}" class="btn btn-primary">Edit Profile</a>
+                        {% endif %}
+                        <a href="{% url 'note_list' %}" class="btn btn-dark" style="color: rgb(187, 186, 186) !important;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Notes</a>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Back Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

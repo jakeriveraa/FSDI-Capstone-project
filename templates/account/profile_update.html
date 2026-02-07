@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Profile Update
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile_update.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Update Your Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <div class="d-grid gap-2 mt-3">
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

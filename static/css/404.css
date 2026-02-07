@@ -1,3 +1,4 @@
+/* Make body fill the screen and center content */
 body {
     background-color: #0f172a;
     color: #e5e7eb;
@@ -7,11 +8,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    text-align: center; /* center text inside container */
 }
 
 .container {
-    text-align: center;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -33,11 +38,12 @@ a {
     color: white;
     text-decoration: none;
     border-radius: 6px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 a:hover {
     background-color: #2563eb;
+    transform: scale(1.05);
 }
 
 img {

@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/404.css' %}">
 {% endblock %}
+
 {% block title %}404 Not Found{% endblock %}
 
 {% block content %}
+<div class="container">
+    <h1>💀 404</h1>
+    <p>The page you were looking for packed its bags and left.</p>
+    <p>Or maybe it never existed. Who knows? 🤷‍♂️</p>
+    <p>Either way... <strong>well done.</strong> You found nothing!</p>
+    
+    <a href="{% url 'home' %}">Go back home →</a>
 
-    <div class="container">
-        <h1>💀 404</h1>
-        <p>The page you were looking for packed its bags and left.</p>
-        <p>Or maybe it never existed. Who knows? 🤷‍♂️</p>
-        <p>Either way... <strong>well done.</strong> You found nothing!</p>
-        
-        <p>
-            <a href="/">Go back home →</a>
-        </p>
-    </div>
-
+    
+</div>
 {% endblock %}

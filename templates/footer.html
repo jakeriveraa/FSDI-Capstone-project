@@ -1,31 +1,41 @@
 <footer class="footer mt-auto py-4 bg-light border-top">
-    <div class="container">
-        <div class="row text-center text-md-start align-items-center">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center">
+      <!-- Brand / Copyright -->
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h6 class="fw-bold mb-1">Capstone Project</h6>
+        <p class="text-muted mb-0">
+          &copy; 2025 Capstone Project. All rights reserved.
+        </p>
+      </div>
 
-            <!-- Brand / Copyright -->
-            <div class="col-md-4 mb-3 mb-md-0">
-                <h6 class="fw-bold mb-1">Capstone Project</h6>
-                <p class="text-muted mb-0">
-                    &copy; 2025 Capstone Project. All rights reserved.
-                </p>
-            </div>
+      <!-- Navigation Links -->
+      <div class="col-md-4 mb-3 mb-md-0 text-center">
+        <a href="{% url 'home' %}" class="text-decoration-none mx-2">Home</a>
+        <a href="{% url 'about' %}" class="text-decoration-none mx-2">About</a>
+        <a href="{% url 'contact' %}" class="text-decoration-none mx-2"
+          >Contact</a
+        >
+      </div>
 
-            <!-- Navigation Links -->
-            <div class="col-md-4 mb-3 mb-md-0 text-center">
-                <a href="{% url 'home' %}" class="text-decoration-none mx-2">Home</a>
-                <a href="{% url 'about' %}" class="text-decoration-none mx-2">About</a>
-                <a href="{% url 'contact' %}" class="text-decoration-none mx-2">Contact</a>
-            </div>
-
-            <!-- Technology Acknowledgment -->
-            <div class="col-md-4 text-md-end text-center">
-                <small class="text-muted d-flex justify-content-md-end justify-content-center align-items-center gap-2">
-                    Built with
-                    <i class="bi bi-bootstrap-fill text-purple fs-5" title="Bootstrap"></i>
-                    <i class="fa-brands fa-python fs-5 text-success" title="Django"></i>
-                </small>
-            </div>
-
-        </div>
+      <!-- Technology Acknowledgment -->
+      <div class="col-md-4 text-md-end text-center">
+        <small
+          class="text-muted d-flex justify-content-md-end justify-content-center align-items-center gap-2"
+        >
+          Built with
+          <a href="https://getbootstrap.com" target="_blank" title="Bootstrap">
+            <i class="bi bi-bootstrap-fill text-purple fs-5"></i>
+          </a>
+          <a
+            href="https://www.djangoproject.com"
+            target="_blank"
+            title="Django"
+          >
+            <i class="fa-brands fa-python fs-5 text-success"></i>
+          </a>
+        </small>
+      </div>
     </div>
+  </div>
 </footer>

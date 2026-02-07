@@ -1,0 +1,26 @@
+.profile {
+    margin-top: 20px;
+}
+
+.profile img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.profile ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.notes-btn {
+    color: #080808 !important;
+}
+
+.notes-btn:hover {
+    opacity: 0.8;
+}

@@ -1,3 +1,27 @@
-<h1>Welcome, {{ user.username }}!</h1>
-<p>You are logged in.</p>
-<a href="{% url 'account_logout' %}">Logout</a>
+{% extends "base.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-body text-center">
+                    <h1>Welcome, {{ user.username }}! 👋</h1>
+                    <p class="lead mt-3">You have successfully logged in.</p>
+                    
+                    <div class="mt-4">
+                        <a href="{% url 'profile_details' %}" class="btn btn-primary me-2">View Profile</a>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Back Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

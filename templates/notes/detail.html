@@ -26,8 +26,15 @@
                 <div class="comment-card">
                     <div class="comment-header">
                         <div class="comment-author">
-                            <strong>{{ comment.author.username }}</strong>
-                            <span class="comment-date">{{ comment.created_at|date:"M d, Y" }}</span>
+                            {% if comment.author.profile.picture %}
+                                <img src="{{ comment.author.profile.picture.url }}" alt="Profile Picture" class="comment-avatar" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
+                            {% else %}
+                                <img src="{% static 'img/placeholderr.webp' %}" alt="No Picture" class="comment-avatar" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;">
+                            {% endif %}
+                            <div>
+                                <a href="{% url 'profile_details' comment.author.id %}"><strong>{{ comment.author.username }}</strong></a>
+                                <span class="comment-date">{{ comment.created_at|date:"M d, Y" }}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="comment-body">
